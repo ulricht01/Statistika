@@ -1,3 +1,5 @@
+# Kapitola 1
+
 vyberovy_prumer <- function(x)
 {
   vysledek <- sum(x)/length(x)
@@ -106,7 +108,7 @@ print(max_hodnota(data))
 
 library(readxl)
 
-data_ex = read_excel('C:\\Users\\tomik\\OneDrive\\Plocha\\Škola\\PAS\\Data_vyzkum.xlsx')
+data_ex = read_excel('Data_vyzkum.xlsx')
 
 print(summary(data_ex$Hmotnost))
 
@@ -119,3 +121,22 @@ print(paste("1.Kvantil: ", qu_1st(data_ex$Hmotnost)))
 print(paste("3.Kvantil: ", qu_3rd(data_ex$Hmotnost)))
 print(paste("Minimalni hodnota: ", min_hodnota(data_ex$Hmotnost)))
 print(paste("Maximalni hodnota: ", max_hodnota(data_ex$Hmotnost)))
+
+
+# Kapitola 2
+
+hodnoty <- c(1,2,3,4,5,6,7,8,9,10)
+abs_cetnost <- c(1,0,2,0,1,0,2,1,0,3)
+rel_cetnost <- (abs_cetnost / length(hodnoty)) *100
+
+hist_data <- rep(hodnoty, rel_cetnost)
+
+hist(hist_data,
+     main = 'Histogram střelby lukem',
+     xlab = 'Hodnoty',
+     ylab = 'Relativní četnost (%)',
+     col = 'lightblue',
+     border = 'black',
+     breaks = 5
+)
+
